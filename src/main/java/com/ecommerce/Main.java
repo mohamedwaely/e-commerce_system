@@ -70,7 +70,7 @@ public class Main {
         out.println("=================================================================");
 
         // Expired Product
-        Date expiredCheeseExpiry = Date.from(Instant.now().plus(0, ChronoUnit.DAYS));
+        Date expiredCheeseExpiry = Date.from(Instant.now().plus(1, ChronoUnit.DAYS));
         Product expiredCheese = new ExpirableProduct("cheese", 100, 2, expiredCheeseExpiry);
         cart.clear();
         cart.add(expiredCheese, 1);
@@ -83,15 +83,16 @@ public class Main {
 
         out.println("=================================================================");
 
-        // Out of Stock
+       //  Out of Stock
         cart.clear();
-        cart.add(TV, 200);
+        cart.add(TV, 3);
         try{
             checkoutService.checkout(ali, cart);
         }
         catch(Exception e){
             out.println("Error: " +  e.getMessage());
         }
+
 
 
 
