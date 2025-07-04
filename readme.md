@@ -22,7 +22,7 @@ Built around Product hierarchy, Cart management, and separate services for check
 
 <div align="center">
   <img src="./imgs/normal-checkout.png" alt="code" width="400"/>
-  <img src="./imgs/empty-cart-output.png" alt="output" width="400"/>
+  <img src="./imgs/normal-checkout-output.png" alt="output" width="400"/>
 </div>
 
 ### Insufficient balance && its output
