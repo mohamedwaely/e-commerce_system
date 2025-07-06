@@ -38,15 +38,3 @@ Built around Product hierarchy, Cart management, and separate services for check
   <img src="./imgs/empty-cart.png" alt="code" width="400"/>
   <img src="./imgs/empty-cart-output.png" alt="output" width="400"/>
 </div>
-
-### Expired Product
-
-<div align="center">
-  <img src="./imgs/expired-product-.png" alt="code" width="400"/>
-</div>
-
-### Out of Stock
-
-<div align="center">
-  <img src="./imgs/out-of-stck.png" alt="code" width="400"/>
-</div>
