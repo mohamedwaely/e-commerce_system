@@ -1,15 +1,19 @@
 package com.ecommerce.products;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class ExpirableShippableProduct extends ExpirableProduct implements shippable {
     String name;
     double weight;
     double price;
     int quantity;
-    Date expiryDate;
+    LocalDate expiryDate;
 
-    public ExpirableShippableProduct(String name, double weight, double price, int quantity, Date expiryDate) {
+    @Override
+    public String getName() {
+        return name;
+    }
+    public ExpirableShippableProduct(String name, double weight, double price, int quantity, LocalDate expiryDate) {
         super(name, price, quantity, expiryDate);
         this.weight = weight;
     }

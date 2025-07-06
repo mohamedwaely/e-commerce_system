@@ -1,17 +1,17 @@
 package com.ecommerce.products;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class ExpirableProduct extends Product {
-    Date expiryDate;
-    public ExpirableProduct(String name, double price, int quantity, Date expiryDate){
+    LocalDate expiryDate;
+    public ExpirableProduct(String name, double price, int quantity, LocalDate expiryDate){
         super(name, price, quantity);
         this.expiryDate = expiryDate;
     }
 
     @Override
     public boolean isValidForPurchase(int Quantity) {
-        Date currentDate = new Date();
-        return currentDate.before(expiryDate) && (Quantity <= getQuantity());
+        LocalDate now = LocalDate.now();
+        return (Quantity <= getQuantity()) && (now.isBefore(expiryDate) || now.isEqual(expiryDate));
     }
 }

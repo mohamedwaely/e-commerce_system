@@ -6,6 +6,8 @@ import com.ecommerce.products.shippable;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.System.out;
+
 public class Cart {
     private List<CarItem> items = new ArrayList<CarItem>();
 
@@ -18,6 +20,7 @@ public class Cart {
             if(item.getProduct().equals(product)){
                 if(product.isValidForPurchase(item.getQuantity()+quantity)){
                     item = new CarItem(product, item.getQuantity()+quantity);
+                    out.println("Added product "+product.getName()+" with quantity "+item.getQuantity());
                     return;
                 }
                 else {
@@ -28,9 +31,10 @@ public class Cart {
 
         if(product.isValidForPurchase(quantity)){
             items.add(new CarItem(product, quantity));
+            out.println("Added product "+product.getName()+" with quantity "+product.getQuantity());
         }
         else{
-            throw new IllegalStateException("Unavailable quantity");
+            throw new IllegalStateException("Unavailable Product due to quantity or expiration date");
         }
     }
 
